@@ -1,4 +1,4 @@
-var MainController = function('$scope'){
+var MainController = function($scope){
 	$scope.Titulo = 'Portafolio';
 };
 
