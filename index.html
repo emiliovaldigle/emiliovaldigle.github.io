@@ -1,27 +1,121 @@
 <!DOCTYPE html>
-<html lang="es" >
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Angular Material style sheet -->
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-  <script src="Scripts/Controller/MainController.js"></script>
-  <script src="Scripts/App.js"></script>
-</head>
-<body ng-app="App" ng-controller="MainController">
-<h1>{{Titulo}}</h1>
-<h2 ng-bind="SubTitulo"></h2>
-  <!--
-    Your HTML content here
-  -->  
-  
-  <!-- Angular Material requires Angular.js Libraries -->
-
-  
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        
+    </head>
+    <body ng-app="App" ng-controller="MainController">
+    <div layout="row">
+        <div  flex ="30" hide-xs style="max-width:333px; height:auto !important;">
+            <div class="container">
+            <img ng-src="assets/zoey.jpg" class="md-avatar" />
+            <h6><b>Zoey Deschanel</b></h6>
+            <h8>Design Art</h8>
+            </div>
+            <md-list>
+                <md-subheader class="md-no-sticky">Company logo</md-subheader>
+                <md-list-item ng-click="null">
+                    <i class="material-icons">dashboard</i>
+                    &emsp;<b>Dashboard</b>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item ng-click="null">
+                    <i class="material-icons">perm_phone_msg</i>
+                    &emsp;<b>Contacto</b>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item ng-click="null">
+                    <i class="material-icons">contacts</i>
+                    &emsp;<b>Clientes</b>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item ng-click="null">
+                    <i class="material-icons">account_balance</i>
+                    &emsp;<b>Nosotros</b>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item ng-click="null">
+                    <i class="material-icons">dns</i>
+                    &emsp;<b>Mantenedor</b>
+                </md-list-item>
+                <md-divider></md-divider>
+            </md-list>   
+        </div>
+        <div flex layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <div layout="row" flex>
+                        <md-button class="md-icon-button" aria-label="Favorite">
+                          <i class="material-icons">refresh</i>
+                        </md-button>
+                        <h1></h1>
+                    </div>
+                   <md-input-container hide show-gt-sm>
+                    <input type="text" aria-label="Search">
+                    </md-input-container>
+                   <md-button class="md-icon-button" aria-label="Favorite">
+                     <i class="material-icons">search</i>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                      <i class="material-icons">public</i>
+                    </md-button>
+                     <md-button class="md-icon-button" aria-label="Favorite">
+                     <i class="material-icons">exit_to_app</i>
+                    </md-button>
+                   
+                </div>
+                
+             </md-toolbar>
+           
+                     <div class="jumbotron jumbotron-fluid">
+                      <div class="container">
+                        <h1 class="display-3">Fluid jumbotron</h1>
+                        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                      </div>
+                    </div>
+            
+           
+        </div>
+    </div>
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
+        </script>
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.js"></script>
+        <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+        <script src="node_modules/angular-material/angular-material.min.js"></script>
+        <script src="Controller/MainController.js"></script>
+        
+    </body>
+    <style>
+        .material-icons{
+            color: rgb(71, 74, 79);
+            font-size: 21px
+        }
+        .material-icons:hover{
+            color: rgb(250,234,233);
+        }
+        .md-avatar{
+            margin-top: 10%;
+            border-radius: 50px;
+            max-width: 100px;
+        }
+        md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+            border-color: rgb(71, 74, 79);
+            font-size: 18px;
+        }
+        .md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar){
+            background-color: rgb(247, 247, 247);
+        }
+        .blue{
+            background-color: blue;
+        }
+        .orange{
+            background-color: orange;
+        }
+    </style>
 </html>
