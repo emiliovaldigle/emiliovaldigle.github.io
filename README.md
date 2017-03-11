@@ -1,2 +1,1 @@
-# smgpa.github.io
-SMGPA SITE 
+# io sites
