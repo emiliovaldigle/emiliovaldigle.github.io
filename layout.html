@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <meta charset="utf-8">
          <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     </head>
     <body ng-app="App" ng-controller="MainController">
     <div layout="row">
         <div  flex ="30" hide-xs style="max-width:333px; height:auto !important;">
-            <div class="container">
-            <img ng-src="/assets/zoey.jpg" class="md-avatar" />
+            <div class="container" style="margin-left: 10%;">
+            <img ng-src="assets/zoey.jpg" class="md-avatar" />
             <h6><b>Zoey Deschanel</b></h6>
             <h8>Design Art</h8>
             </div>
             <md-list>
                 <md-subheader class="md-no-sticky">Company logo</md-subheader>
-                <md-list-item ng-click="null">
-                    <i class="material-icons">dashboard</i>
-                    &emsp;<b>Dashboard</b>
-                </md-list-item>
+                <div ng-repeat="item in menu">
+                   <md-list-item ng-click="null" href=#{{item.path}}>
+                        <i class="material-icons">{{item.icon}}</i>
+                    &emsp;<b>{{item.menuitem}}</b>
+                    </md-list-item>
                 <md-divider></md-divider>
-                <md-list-item ng-click="null">
-                    <i class="material-icons">perm_phone_msg</i>
-                    &emsp;<b>Contacto</b>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item ng-click="null">
-                    <i class="material-icons">contacts</i>
-                    &emsp;<b>Clientes</b>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item ng-click="null">
-                    <i class="material-icons">account_balance</i>
-                    &emsp;<b>Nosotros</b>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item ng-click="null">
-                    <i class="material-icons">dns</i>
-                    &emsp;<b>Mantenedor</b>
-                </md-list-item>
-                <md-divider></md-divider>
+                </div>
             </md-list>   
         </div>
         <div flex layout="column">
@@ -66,30 +49,27 @@
                     </md-button>
                    
                 </div>
-                
              </md-toolbar>
-           
-                     <div class="jumbotron jumbotron-fluid">
-                      <div class="container">
-                        <h1 class="display-3">Fluid jumbotron</h1>
-                        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                      </div>
-                    </div>
+           <ng-view>
+            
+            
+            </ng-view>
             
            
         </div>
     </div>
-       <script src="https://code.jquery.com/jquery-3.1.1.js"
-          integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
-        </script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <!-- AngularJS Material Dependencies -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-        <script src="/Controller/MainController.js"></script>
+        <script src="Controller/MainController.js"></script>
         
     </body>
     <style>
@@ -98,10 +78,10 @@
             font-size: 21px
         }
         .material-icons:hover{
-            color: rgb(250,234,233);
+            color: rgba(71,74,79, 0.7);
         }
         .md-avatar{
-            margin-top: 10%;
+            margin-top: 5%;
             border-radius: 50px;
             max-width: 100px;
         }
