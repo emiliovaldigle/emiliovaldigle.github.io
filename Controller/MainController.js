@@ -14,18 +14,18 @@ App.controller("MainController",['$scope',function($scope) {
 App.config(function($routeProvider){
    $routeProvider
    .when("/index",{
-     templateUrl : "Views/index.html"  
+     templateUrl : "/Views/index.html"  
    })
    .when("/biography",{
-     templateUrl : "Views/biography.html"  
+     templateUrl : "/Views/biography.html"  
    })
    .when("/clients",{
-     templateUrl : "clients.html"  
+     templateUrl : "/Views/clients.html"  
    })
    .when("/contact",{
-     templateUrl : "contact.html"  
+     templateUrl : "/Views/contact.html"  
    })
    .when("/articles",{
-     templateUrl : "articles.html"  
+     templateUrl : "/Views/articles.html"  
    });
 });
